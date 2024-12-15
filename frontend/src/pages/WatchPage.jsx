@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import ReactPlayer from "react-player";
 import { ORIGINAL_IMG_BASE_URL, SMALL_IMG_BASE_URL } from "../utils/constantsHelper";
 import { formatReleaseDate } from "../utils/dateFunction";
-import WatchPageSkeleton from "../Components/Skeletons/WatchPageSkeleton";
+import WatchPageSkeleton from "../components/skeletons/WatchPageSkeleton";
 
 const WatchPage = () => {
   const { id } = useParams();
