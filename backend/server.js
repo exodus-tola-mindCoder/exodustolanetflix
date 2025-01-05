@@ -1,6 +1,15 @@
 import express from "express";
+const cors = require('cors');
 import cookieParser from "cookie-parser";
 import path from "path";
+
+// Allow requests from your Vercel domain
+const corsOptions = {
+  origin: 'https://exodustolanetfli.vercel.app/', // Replace with your Vercel domain
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 import authRoutes from "./routes/auth.route.js"
 import movieRoutes from "./routes/movie.route.js"
@@ -35,7 +44,7 @@ if (ENV_VARS.NODE_ENV === "production") {
 }
 
 
-app.listen(PORT, () => {
+app.listen(ProcessingInstruction.env.PORT, () => {
   console.log("Server started at http://localhost:" + PORT);
   connectDB()
 });
